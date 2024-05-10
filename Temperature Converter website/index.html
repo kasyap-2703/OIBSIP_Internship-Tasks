@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="converter">
+      <label for="fromunit">From:</label>
+      <select id="fromunit">
+      <option value="C">Celsius</option>
+      <option value="F">Fahrenheit</option>
+      </select>
+      <label for="tounit">To:</label>
+      <select id="tounit">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        </select>
+        <label for="temperature">Temperature</label>
+        <input type="number" id="temperature" placeholder="Enter Temperature please">
+        <button onclick="convert()">Convert</button>
+
+        <label for="result">Result:</label>
+        <input type="text" id="result" readonly>
+    </div>
+    <script>
+       function convert() {
+        var fromunit = document.getElementById('fromunit').value;
+        var tounit = document.getElementById('tounit').value;
+        var temperature = parseFloat(document.getElementById('temperature').value);
+
+        var converttedvalue;
+        var resulttime;
+
+        //perform conversion logic
+
+        switch (fromunit){
+          case 'C':
+             if (tounit === 'F') {
+              convertedvalue = (temperature * 9/5) +32;
+              resulttime = 'F'; 
+             }else{
+              convertedvalue = temperature;
+              resulttime = 'C';
+             }
+             break;
+             case 'F':
+             if (tounit === 'C') {
+              convertedvalue = (temperature -32) * 5/9;
+              resulttime = 'C'; 
+             }else {
+              convertedvalue = temperature;
+              resulttime = 'F';
+             }
+             break;
+        }
+            document.getElementById('result').value = convertedvalue.toFixed(2) + ' ' + resulttime;
+       }
+    </script>
+</body>
+</html>

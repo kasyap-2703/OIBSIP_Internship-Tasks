@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My personal portfolio website</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/5999bf9d0d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <ul id="sidemenu">
+          <li><a href="#header">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#portfolio">PORTFOLIO</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+        <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+      </nav>
+      <div class="header-text">
+        <p>FRONTEND DEVELOPER</p>
+        <h1>I am <span>Kasyap Sai</span><br> from India</h1>
+      </div>
+    </div>
+  </div>
+
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">ABOUT ME</h1>
+          <p>As a frontend web developer, I specialize in creating visually appealing and user-friendly interfaces for websites.</p>
+
+          <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>2024-Current</span><br>Interning at Oasisinfobyte</li>
+              <li><span>2023-2024</span><br> Interning at Inventors Community</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>Web Design</span><br>Designing web/app Interfaces</li>
+              <li><span>Web development</span><br>Building Web/App Interfaces</li>
+              <li><span>App development</span><br>Web/App Development</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2022</span><br>Senior Secondary School Leaving Certificate</li>
+              <li><span>2023</span><br>Technical Writing at Aptlearnio</li>
+              <li><span>2024</span><br>Product Management at Aptlearnio</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services">
+    <div class="container">
+      <h1 class="sub-title">MY SERVICES</h1>
+      <div class="services-list">
+        <div>
+          <i class="fa-solid fa-code"></i>
+          <h2>Web Design</h2>
+          <p>This is the web design page section.</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-crop"></i>
+          <h2>Web Development</h2>
+          <p>This is the web Development page section.</p>
+        </div>
+        <div>
+          <i class="fa-brands fa-app-store"></i>
+          <h2>App Development</h2>
+          <p>This is the App Development page section.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio">
+    <div class="container">
+      <h1 class="sub-title">MY PORTFOLIO</h1>
+      <div class="work-list">
+        <div class="work">
+          <div class="layer">
+            <h3>Hotel pop up page</h3>
+            <p>This helps user to get to know about the hotel that it existed and also patronize them.</p>
+          </div>
+        </div>
+        <div class="work">
+          <div class="layer">
+            <h3>Hotel log in page</h3>
+            <p>This helps user to log in and book a room in the hotel without being physically present.</p>
+          </div>
+        </div>
+        <div class="work">
+          <div class="layer">
+            <h3>School landing page</h3>
+            <p>This helps user to know more about their school and courses offered in the school.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-left">
+          <h1 class="sub-title">Contact Me</h1>
+          <p><i class="fa-solid fa-paper-plane"></i>kasyapsai27@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i>9908423346</p>
+          <div class="social-icons">
+          </div>
+        </div>
+        <div class="contact-right">
+          <form>
+            <input type="text" name="Name" placeholder="Your name" required>
+            <input type="text" name="Email" placeholder="Your email" required>
+            <textarea name="Message" rows="6" placeholder="feedback"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright @ Kasyap Sai. Made with <i class="fa-solid fa-heart"></i> love</p>
+    </div>
+  </div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontents.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu() {
+      sidemenu.style.right = "0";
+    }
+    function closemenu() {
+      sidemenu.style.right = "-200px";
+    }
+  </script>
+</body>
+</html>
